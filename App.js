@@ -1,23 +1,46 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import moduleListScreen from './src/components/screens/moduleListScreen';
+import moduleAddScreen from './src/components/screens/moduleAddScreen';
+import moduleViewScreen from './src/components/screens/moduleViewScreen';
+import moduleModifyScreen from './src/components/screens/moduleAddScreen';
 
-export const App = () => {
-
+const Stack = createNativeStackNavigator();
+ const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Hello world!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <NavigationContainer>
+    <Stack.Navigator 
+    initialRouteName='moduleAddScreen'
+    screenOptions={{
+      headerStyle: {backgroundColor: 'black'},
+      headerTintColor: 'white',
+    }}
+    >
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    <Stack.Screen
+    name='moduleListScreen'
+    component={moduleListScreen}
+    options={{title: 'List modules'}}
+    />
+    <Stack.Screen
+    name='moduleAddScreen'
+    component={moduleAddScreen}
+    options={{title: 'Add module'}}
+    />
+    <Stack.Screen
+    name='moduleViewScreen'
+    component={moduleViewScreen}
+    options={{title: 'View modules'}}
+    />
+    <Stack.Screen
+    name='moduleModifyScreen'
+    component={moduleModifyScreen}
+    options={{title: 'Modify module'}}
+    />
+    
 
+    </Stack.Navigator>
+    </NavigationContainer>
+  )
+};
 export default App;
