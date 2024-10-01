@@ -35,6 +35,7 @@ const Stack = createNativeStackNavigator();
     <Stack.Screen
     name='ModuleModifyScreen'
     component={ModuleModifyScreen}
+
     options={{title: 'Modify module'}}
     />
     
