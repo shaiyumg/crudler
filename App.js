@@ -1,16 +1,16 @@
 import {NavigationContainer} from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import moduleListScreen from './src/components/screens/moduleListScreen';
-import moduleAddScreen from './src/components/screens/moduleAddScreen';
-import moduleViewScreen from './src/components/screens/moduleViewScreen';
-import moduleModifyScreen from './src/components/screens/moduleAddScreen';
+import ModuleListScreen from './src/components/screens/ModuleListScreen';
+import ModuleAddScreen from './src/components/screens/ModuleAddScreen';
+import ModuleViewScreen from './src/components/screens/ModuleViewScreen';
+import ModuleModifyScreen from './src/components/screens/ModuleModifyScreen';
 
 const Stack = createNativeStackNavigator();
  const App = () => {
   return (
     <NavigationContainer>
     <Stack.Navigator 
-    initialRouteName='moduleAddScreen'
+    initialRouteName='ModuleListScreen'
     screenOptions={{
       headerStyle: {backgroundColor: 'black'},
       headerTintColor: 'white',
@@ -18,23 +18,24 @@ const Stack = createNativeStackNavigator();
     >
 
     <Stack.Screen
-    name='moduleListScreen'
-    component={moduleListScreen}
+    name='ModuleListScreen'
+    component={ModuleListScreen}
     options={{title: 'List modules'}}
     />
     <Stack.Screen
-    name='moduleAddScreen'
-    component={moduleAddScreen}
+    name='ModuleAddScreen'
+    component={ModuleAddScreen}
     options={{title: 'Add module'}}
     />
     <Stack.Screen
-    name='moduleViewScreen'
-    component={moduleViewScreen}
+    name='ModuleViewScreen'
+    component={ModuleViewScreen}
     options={{title: 'View modules'}}
     />
     <Stack.Screen
-    name='moduleModifyScreen'
-    component={moduleModifyScreen}
+    name='ModuleModifyScreen'
+    component={ModuleModifyScreen}
+
     options={{title: 'Modify module'}}
     />
     
